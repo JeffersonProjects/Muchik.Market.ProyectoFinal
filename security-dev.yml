@@ -1,0 +1,13 @@
+jwtSettings:
+  issuer: muchik.pe,
+  audience: public,
+  secretKey: NABCEMNBWHASONMSRZPOUNABCEMNBWHASONMSRZPOUONS278650124508754329833,
+  lifetime: 3600
+cosmosDbSettings:
+  endpoint: https://cosmosrgeastus5763926e-729b-4f86-aaf7db.documents.azure.com:443/
+  primaryKey: dNA9locGTqrCA7AOy5qd1dgf5952D2E4DQikZB2KWVqAmUasyrTZB5kYEU9st1CZ9eUOTlm5qiJAACDbNzQjAQ==
+  database: muchik
+rabbitMqSettings:
+  hostName: rabbitmq-muchik
+  username: usr_admin
+  password: NewHorizons_2023
