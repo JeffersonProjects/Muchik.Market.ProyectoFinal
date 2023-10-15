@@ -14,7 +14,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.AddConfigServer();
 // Add services to the container.
 var application = builder.Configuration.GetValue<string>("name", "Not found!");
-var muchikConnection = builder.Configuration.GetValue<string>("connectionStrings:muchikConnection","Not found!");
+var muchikConnection = builder.Configuration.GetValue<string>("connectionStrings:muchikConnection", "Not found!");
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

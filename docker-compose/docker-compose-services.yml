@@ -30,7 +30,7 @@ services:
     environment:
     - POSTGRES_PASSWORD=NewHorizons_2023@
     ports:
-    - 5434:5432
+    - 5432:5432
     networks:
     - muchik-nw
   service-mongo:

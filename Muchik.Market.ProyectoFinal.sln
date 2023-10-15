@@ -65,15 +65,21 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "muchik.market.invoice.infra
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "muchik.market.invoice.api", "muchik.market.invoice.api\muchik.market.invoice.api.csproj", "{B3A30ACD-B240-4D62-A585-3551391F43B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "muchik.market.security.api", "muchik.market.security.api\muchik.market.security.api.csproj", "{49DC80DF-A999-45B3-B64D-0018808C496D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "muchik.market.security.api", "muchik.market.security.api\muchik.market.security.api.csproj", "{49DC80DF-A999-45B3-B64D-0018808C496D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bus", "Bus", "{3EED07C7-07A3-4F67-925C-8D815179B6E1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cross-Cutting", "Cross-Cutting", "{3F99FAB5-E592-45A5-A06D-D234930E3D58}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "muchik.market.infrasctructure.crosscutting", "muchik.market.infrasctructure.crosscutting\muchik.market.infrasctructure.crosscutting.csproj", "{C657FE09-5CBC-4857-BB1C-66D85E489456}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "muchik.market.infrasctructure.crosscutting", "muchik.market.infrasctructure.crosscutting\muchik.market.infrasctructure.crosscutting.csproj", "{C657FE09-5CBC-4857-BB1C-66D85E489456}"
 EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{8679A932-9998-468A-9D44-8D4A781109CE}"
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{158A2B93-F42E-4549-982A-CBBB56FD7530}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "muchik.market.infrastructure.bus", "..\muchik.market.infrastructure.bus\muchik.market.infrastructure.bus.csproj", "{F123AEEB-B702-4DDA-8F6E-46A4D9F34D18}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API Gateway", "API Gateway", "{CC93E5A2-0E60-4C7B-8591-C068093AD538}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "muchik.market.api.gateway", "muchik.market.api.gateway\muchik.market.api.gateway.csproj", "{A642CCF3-FF80-4B30-9DEB-D474FD593E8F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -137,10 +143,18 @@ Global
 		{C657FE09-5CBC-4857-BB1C-66D85E489456}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C657FE09-5CBC-4857-BB1C-66D85E489456}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C657FE09-5CBC-4857-BB1C-66D85E489456}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8679A932-9998-468A-9D44-8D4A781109CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8679A932-9998-468A-9D44-8D4A781109CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8679A932-9998-468A-9D44-8D4A781109CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8679A932-9998-468A-9D44-8D4A781109CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{158A2B93-F42E-4549-982A-CBBB56FD7530}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{158A2B93-F42E-4549-982A-CBBB56FD7530}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{158A2B93-F42E-4549-982A-CBBB56FD7530}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{158A2B93-F42E-4549-982A-CBBB56FD7530}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F123AEEB-B702-4DDA-8F6E-46A4D9F34D18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F123AEEB-B702-4DDA-8F6E-46A4D9F34D18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F123AEEB-B702-4DDA-8F6E-46A4D9F34D18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F123AEEB-B702-4DDA-8F6E-46A4D9F34D18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A642CCF3-FF80-4B30-9DEB-D474FD593E8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A642CCF3-FF80-4B30-9DEB-D474FD593E8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A642CCF3-FF80-4B30-9DEB-D474FD593E8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A642CCF3-FF80-4B30-9DEB-D474FD593E8F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -178,6 +192,8 @@ Global
 		{3EED07C7-07A3-4F67-925C-8D815179B6E1} = {27E9A3AC-4DDE-4FCF-8C26-C29CFE5E9AD0}
 		{3F99FAB5-E592-45A5-A06D-D234930E3D58} = {27E9A3AC-4DDE-4FCF-8C26-C29CFE5E9AD0}
 		{C657FE09-5CBC-4857-BB1C-66D85E489456} = {3F99FAB5-E592-45A5-A06D-D234930E3D58}
+		{F123AEEB-B702-4DDA-8F6E-46A4D9F34D18} = {3EED07C7-07A3-4F67-925C-8D815179B6E1}
+		{A642CCF3-FF80-4B30-9DEB-D474FD593E8F} = {CC93E5A2-0E60-4C7B-8591-C068093AD538}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {69207D45-CE7A-43EA-B23E-B57C1C3F7B55}

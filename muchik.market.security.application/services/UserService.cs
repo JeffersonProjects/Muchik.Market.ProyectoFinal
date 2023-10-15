@@ -40,26 +40,27 @@ namespace muchik.market.security.application.services
             var currentUser = GetUserByUsername(signInRequestDto.Username);
             if (currentUser == null || !BCryptManager.Verify(signInRequestDto.Password, currentUser.password)) throw new BusinessException("Username or password incorrect.");
             var signInResponseDto = _mapper.Map<SignInResponseDto>(currentUser);
-            signInResponseDto.Token = _jwtManager.GenerateToken(signInResponseDto.Id.ToString(), signInResponseDto.Username);
+            signInResponseDto.Token = _jwtManager.GenerateToken(currentUser.id_user.ToString(), signInResponseDto.Username);
+            signInResponseDto.Id = currentUser.id_user;
             return signInResponseDto;
         }
 
         public void SignUp(CreateUserDto userDto)
         {
             var random = new Random();
-            var value = random.Next(0, 2);
+            var value = random.Next(1, 2);
             if (value == 0)
             {
                 throw new Exception("Random Timeout");
             }
 
-            var currentUser = GetUserByUsername(userDto.Username);
+            var currentUser = GetUserByUsername(userDto.username);
             if (currentUser is not null)
             {
                 throw new BusinessException("User alredy exists.");
             }
 
-            var user = _mapper.Map<User>(userDto);
+            var user = new User { password = userDto.password, username = userDto.username};
             user.password = BCryptManager.HashText(user.password);
             _userRepository.Add(user);
             _userRepository.Save();

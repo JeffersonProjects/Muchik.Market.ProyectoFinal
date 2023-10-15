@@ -5,9 +5,14 @@ using muchik.market.invoice.application.services;
 using muchik.market.invoice.domain.interfaces;
 using muchik.market.invoice.infraestructure.context;
 using muchik.market.invoice.infraestructure.repositories;
+using Steeltoe.Extensions.Configuration.ConfigServer;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.AddConfigServer();
+// Add services to the container.
+var application = builder.Configuration.GetValue<string>("name", "Not found!");
+var muchikConnection = builder.Configuration.GetValue<string>("connectionStrings:muchikConnection", "Not found!");
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -21,7 +26,7 @@ builder.Services.AddAutoMapper(typeof(EntityToDtoProfile), typeof(DtoToEntityPro
 //SQL Server
 builder.Services.AddDbContext<InvoiceContext>(config =>
 {
-    config.UseNpgsql(builder.Configuration.GetConnectionString("MuchikMarketConnection"));
+    config.UseNpgsql(muchikConnection);
 });
 
 ////RabbitMQ Settings

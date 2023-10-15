@@ -8,7 +8,7 @@ namespace muchik.market.security.application.dto
 {
     public class CreateUserDto
     {
-        public string Username { get; set; } = null!;
-        public string Password { get; set; } = null!;
+        public string username { get; set; } = null!;
+        public string password { get; set; } = null!;
     }
 }

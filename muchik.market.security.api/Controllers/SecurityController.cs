@@ -22,12 +22,12 @@ namespace muchik.market.security.api.Controllers
             return Ok(_securityService.GetAllUsers());
         }
 
-        //[HttpPost("signUp")]
-        //public IActionResult SignUp([FromBody] CreateUserDto userDto)
-        //{
-        //    _securityService.SignUp(userDto);
-        //    return Ok();
-        //}
+        [HttpPost("signUp")]
+        public IActionResult SignUp([FromBody] CreateUserDto userDto)
+        {
+            _securityService.SignUp(userDto);
+            return Ok();
+        }
 
         [HttpPost("signIn")]
         public IActionResult SignIn([FromBody] SignInRequestDto signInRequestDto)

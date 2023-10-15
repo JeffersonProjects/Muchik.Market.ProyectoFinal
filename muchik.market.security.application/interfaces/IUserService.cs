@@ -9,7 +9,7 @@ namespace muchik.market.security.application.interfaces
 {
     public interface IUserService
     {
-
+        void SignUp(CreateUserDto userDto);
         SignInResponseDto SignIn(SignInRequestDto signInRequestDto);
         ICollection<UserDto> GetAllUsers();
     }

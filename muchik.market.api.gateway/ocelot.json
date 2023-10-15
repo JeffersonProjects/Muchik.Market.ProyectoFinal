@@ -1,0 +1,54 @@
+{
+  "Routes": [
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "DownstreamPathTemplate": "/api/common/{everything_else}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "nh.qhatu.common.api",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/qhatu/api/common/{everything_else}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "RouteClaimsRequirement": {
+        "Role": "admin"
+      }
+    },
+    
+    {
+      "DownstreamPathTemplate": "/api/security/{everything_else}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "nh.qhatu.security.api",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/qhatu/api/security/{everything_else}",
+      "UpstreamHttpMethod": [ "GET", "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/payment/{everything_else}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "nh.qhatu.payment.api",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/qhatu/api/payment/{everything_else}",
+      "UpstreamHttpMethod": [ "GET", "POST" ],
+      "RouteClaimsRequirement": {
+        "Role": "admin"
+      }
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://muchik.market.api.gateway"
+  }
+}
