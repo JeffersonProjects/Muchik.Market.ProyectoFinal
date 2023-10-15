@@ -1,0 +1,74 @@
+version: "3.5"
+
+services:
+  service-mysql:
+    image: mysql:8.0.26
+    container_name: local-mysql
+    restart: always
+    environment:
+    - MYSQL_ROOT_PASSWORD=NewHorizons_2023@
+    ports:
+    - 3306:3306
+    - 33060:33060
+    networks:
+    - muchik-nw
+  service-sql:
+    image: mcr.microsoft.com/mssql/server:2019-GA-ubuntu-16.04
+    container_name: local-mssql
+    restart: always
+    ports:
+    - 1433:1433
+    environment:
+    - ACCEPT_EULA=Y
+    - SA_PASSWORD=NewHorizons_2023@
+    networks:
+    - muchik-nw
+  service-postgres:
+    image: postgres
+    container_name: local-postgres
+    restart: always
+    environment:
+    - POSTGRES_PASSWORD=NewHorizons_2023@
+    ports:
+    - 5434:5432
+    networks:
+    - muchik-nw
+  service-mongo:
+    image: mongo:5.0.2
+    container_name: local-mongo
+    restart: always
+    environment:
+    - MONGO_INITDB_ROOT_USERNAME=root
+    - MONGO_INITDB_ROOT_PASSWORD=NewHorizons_2023@
+    ports:
+    - 27017:27017
+    networks:
+    - muchik-nw
+  service-rabbit:
+    hostname: localhost
+    image: rabbitmq:3-management
+    container_name: rabbitmq-muchik
+    restart: always
+    environment:
+      - RABBITMQ_DEFAULT_USER=usr_admin
+      - RABBITMQ_DEFAULT_PASS=NewHorizons_2023@
+    ports:
+    - 5672:5672
+    - 15672:15672
+    networks:
+    - muchik-nw  
+  service-steeltoeoss:
+    image: steeltoeoss/config-server
+    container_name: muchik-config
+    restart: always
+    command: --spring.profiles.active=dev --spring.cloud.config.server.git.uri="https://github.com/caiquipa1206/muchik-settings.git"
+    # environment:
+      # - spring.profiles.active=dev
+      # - spring.cloud.config.server.git.uri="https://github.com/caiquipa1206/muchik-settings.git"
+    ports:
+    - 8888:8888
+    networks:
+    - muchik-nw  
+networks:
+  muchik-nw:
+    name: muchik-nw

@@ -1,0 +1,10 @@
+version: '3.4'
+
+services:
+  muchik.market.security.api:
+    image: ${DOCKER_REGISTRY-}muchikmarketsecurityapi
+    build:
+      context: .
+      dockerfile: muchik.market.security.api/Dockerfile
+    networks:
+    - muchik-nw

@@ -1,0 +1,1 @@
+docker run --name muchik-config -p 8888:8888 -d steeltoeoss/config-server --spring.profiles.active=dev --spring.cloud.config. server.git.uri=https://github.com/JeffersonProjects/Muchik.Market.ProyectoFinal.git
