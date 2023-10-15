@@ -7,7 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.22">
+	   <PrivateAssets>all</PrivateAssets>
+	   <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>	  
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\muchik.market.invoice.application\muchik.market.invoice.application.csproj" />
+    <ProjectReference Include="..\muchik.market.invoice.infraestructure\muchik.market.invoice.infraestructure.csproj" />
   </ItemGroup>
 
 </Project>
