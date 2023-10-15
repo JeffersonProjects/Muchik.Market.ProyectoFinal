@@ -6,5 +6,3 @@ services:
     build:
       context: .
       dockerfile: muchik.market.security.api/Dockerfile
-    networks:
-    - muchik-nw
