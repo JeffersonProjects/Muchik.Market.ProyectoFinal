@@ -8,6 +8,7 @@ using muchik.market.pay.application.services;
 using muchik.market.pay.domain.interfaces;
 using muchik.market.pay.infraestructure.context;
 using muchik.market.pay.infraestructure.repositories;
+using Steeltoe.Discovery.Client;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -54,8 +55,8 @@ builder.Services.AddTransient<PaymentContext>();
 //    opt.AddPolicy("CorsPolicy", b => b.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 //});
 
-////Consul
-//builder.Services.AddDiscoveryClient();
+//Consul
+builder.Services.AddDiscoveryClient();
 
 
 var app = builder.Build();

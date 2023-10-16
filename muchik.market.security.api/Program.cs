@@ -7,6 +7,7 @@ using muchik.market.security.application.services;
 using muchik.market.security.domain.interfaces;
 using muchik.market.security.infraestructure.context;
 using muchik.market.security.infraestructure.repositories;
+using Steeltoe.Discovery.Client;
 using Steeltoe.Extensions.Configuration.ConfigServer;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -39,6 +40,9 @@ builder.Services.AddTransient<IJwtManager, JwtManager>();
 
 //Context
 builder.Services.AddTransient<SecurityContext>();
+
+//Consul
+builder.Services.AddDiscoveryClient();
 
 var app = builder.Build();
 

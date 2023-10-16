@@ -5,6 +5,7 @@ using muchik.market.invoice.application.services;
 using muchik.market.invoice.domain.interfaces;
 using muchik.market.invoice.infraestructure.context;
 using muchik.market.invoice.infraestructure.repositories;
+using Steeltoe.Discovery.Client;
 using Steeltoe.Extensions.Configuration.ConfigServer;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -43,6 +44,9 @@ builder.Services.AddTransient<IInvoiceRepository, InvoiceRepository>();
 
 //Context
 builder.Services.AddTransient<InvoiceContext>();
+
+//Consul
+builder.Services.AddDiscoveryClient();
 
 
 var app = builder.Build();
