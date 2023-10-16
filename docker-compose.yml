@@ -13,3 +13,16 @@ services:
       context: .
       dockerfile: muchik.market.pay.api/Dockerfile
 
+  muchik.market.invoice.api:
+    image: ${DOCKER_REGISTRY-}muchikmarketinvoiceapi
+    build:
+      context: .
+      dockerfile: muchik.market.invoice.api/Dockerfile
+
+  muchik.market.transaction.api:
+    image: ${DOCKER_REGISTRY-}muchikmarkettransactionapi
+    build:
+      context: .
+      dockerfile: muchik.market.transaction.api/Dockerfile
+
+

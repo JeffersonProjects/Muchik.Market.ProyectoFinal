@@ -17,3 +17,16 @@ services:
     ports:
       - "80"
 
+  muchik.market.invoice.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"
+
+  muchik.market.transaction.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"
+
+
