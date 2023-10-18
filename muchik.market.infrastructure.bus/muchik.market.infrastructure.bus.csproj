@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Muchik.Market.ProyectoFinal\Muchik.Market.Domain\muchik.market.domain.csproj" />
+    <ProjectReference Include="..\Muchik.Market.Domain\muchik.market.domain.csproj" />
   </ItemGroup>
 
 </Project>
