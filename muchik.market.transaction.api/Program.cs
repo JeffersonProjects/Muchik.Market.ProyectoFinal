@@ -2,9 +2,15 @@ using muchik.market.transaction.application.interfaces;
 using muchik.market.transaction.application.mappings;
 using muchik.market.transaction.application.services;
 using muchik.market.transaction.domain.entities;
+using Steeltoe.Extensions.Configuration.ConfigServer;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.AddConfigServer();
+// Add services to the container.
+var application = builder.Configuration.GetValue<string>("name", "Not found!");
+var muchikConnection = builder.Configuration.GetValue<string>("TransacctionsStoreDatabase:ConnectionString", "Not found!");
+var muchikConnection1 = builder.Configuration.GetSection("TransacctionsStoreDatabase");
 // Add services to the container.
 
 builder.Services.AddControllers();

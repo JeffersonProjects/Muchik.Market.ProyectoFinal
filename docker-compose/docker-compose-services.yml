@@ -39,7 +39,7 @@ services:
     restart: always
     environment:
     - MONGO_INITDB_ROOT_USERNAME=root
-    - MONGO_INITDB_ROOT_PASSWORD=NewHorizons_2023@
+    - MONGO_INITDB_ROOT_PASSWORD=NewHorizons_2023
     ports:
     - 27017:27017
     networks:
