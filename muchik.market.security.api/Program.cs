@@ -42,7 +42,7 @@ builder.Services.AddTransient<IJwtManager, JwtManager>();
 builder.Services.AddTransient<SecurityContext>();
 
 //Consul
-builder.Services.AddDiscoveryClient();
+//builder.Services.AddDiscoveryClient();
 
 var app = builder.Build();
 
