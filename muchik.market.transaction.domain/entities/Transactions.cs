@@ -7,6 +7,9 @@ namespace muchik.market.transaction.domain.entities
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
+        [BsonElement("_id")]
+        public string id { get; set; }
+
         [BsonElement("id_transaction")]
         public string Id_Transaction { get; set; } = Guid.NewGuid().ToString("N");
 

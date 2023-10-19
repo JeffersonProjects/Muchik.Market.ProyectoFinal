@@ -3,7 +3,7 @@ version: "3.5"
 services:
   service-mysql:
     image: mysql:8.0.26
-    container_name: local-mysql
+    container_name: local-mysql2
     restart: always
     environment:
     - MYSQL_ROOT_PASSWORD=NewHorizons_2023@
@@ -14,7 +14,7 @@ services:
     - muchik-nw
   service-sql:
     image: mcr.microsoft.com/mssql/server:2019-GA-ubuntu-16.04
-    container_name: local-mssql
+    container_name: local-mssql2
     restart: always
     ports:
     - 1433:1433
@@ -34,12 +34,12 @@ services:
     networks:
     - muchik-nw
   service-mongo:
-    image: mongo:5.0.2
+    image: mongodb/mongodb-community-server:latest
     container_name: local-mongo
     restart: always
-    environment:
-    - MONGO_INITDB_ROOT_USERNAME=root
-    - MONGO_INITDB_ROOT_PASSWORD=NewHorizons_2023
+    #environment:
+    #- MONGO_INITDB_ROOT_USERNAME=root
+    #- MONGO_INITDB_ROOT_PASSWORD=NewHorizons_2023
     ports:
     - 27017:27017
     networks:
