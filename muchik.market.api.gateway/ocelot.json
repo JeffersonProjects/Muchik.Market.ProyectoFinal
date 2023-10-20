@@ -5,47 +5,47 @@
         "AuthenticationProviderKey": "Bearer",
         "AllowedScopes": []
       },
-      "DownstreamPathTemplate": "/api/common/{everything_else}",
+      "DownstreamPathTemplate": "/api/invoice/{everything_else}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "nh.qhatu.common.api",
+          "Host": "muchik.market.invoice.api",
           "Port": 80
         }
       ],
-      "UpstreamPathTemplate": "/qhatu/api/common/{everything_else}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-      "RouteClaimsRequirement": {
-        "Role": "admin"
-      }
+      "UpstreamPathTemplate": "/muchik/api/invoice/{everything_else}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+  
     },
-    
+
     {
       "DownstreamPathTemplate": "/api/security/{everything_else}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "nh.qhatu.security.api",
+          "Host": "muchik.market.security.api",
           "Port": 80
         }
       ],
-      "UpstreamPathTemplate": "/qhatu/api/security/{everything_else}",
+      "UpstreamPathTemplate": "/muchik/api/security/{everything_else}",
       "UpstreamHttpMethod": [ "GET", "POST" ]
     },
     {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
       "DownstreamPathTemplate": "/api/payment/{everything_else}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "nh.qhatu.payment.api",
+          "Host": "muchik.market.pay.api",
           "Port": 80
         }
       ],
-      "UpstreamPathTemplate": "/qhatu/api/payment/{everything_else}",
-      "UpstreamHttpMethod": [ "GET", "POST" ],
-      "RouteClaimsRequirement": {
-        "Role": "admin"
-      }
+      "UpstreamPathTemplate": "/muchick/api/payment/{everything_else}",
+      "UpstreamHttpMethod": [ "GET", "POST" ]
+
     }
   ],
   "GlobalConfiguration": {

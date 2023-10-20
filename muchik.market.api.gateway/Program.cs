@@ -4,6 +4,7 @@ using muchik.market.api.gateway.Middlewares;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
 using Ocelot.Provider.Polly;
+using Steeltoe.Discovery.Client;
 using Steeltoe.Extensions.Configuration.ConfigServer;
 using System.Text;
 
@@ -17,6 +18,12 @@ builder.AddConfigServer();
 //Ocelot
 builder.Configuration.AddJsonFile("ocelot.json", optional: false, reloadOnChange: true);
 builder.Services.AddOcelot().AddPolly();
+
+//Consul
+builder.Services.AddDiscoveryClient();
+var ValidIssuer = builder.Configuration["jwtSettings:issuer"];
+var ValidAudience = builder.Configuration["jwtSettings:audience"];
+var IssuerSigningKey = builder.Configuration["jwtSettings:secretKey"];
 
 // Add services to the container.
 builder.Services
