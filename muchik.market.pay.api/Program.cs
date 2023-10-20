@@ -9,9 +9,13 @@ using muchik.market.pay.domain.interfaces;
 using muchik.market.pay.infraestructure.context;
 using muchik.market.pay.infraestructure.repositories;
 using Steeltoe.Discovery.Client;
+using Steeltoe.Extensions.Configuration.ConfigServer;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.AddConfigServer();
+// Add services to the container.
+var muchikConnection = builder.Configuration.GetValue<string>("ConnectionStrings:MuchikMarketConnection", "Not found!");
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -25,7 +29,7 @@ builder.Services.AddAutoMapper(typeof(EntityToDtoProfile), typeof(DtoToEntityPro
 //SQL Server
 builder.Services.AddDbContext<PaymentContext>(config =>
 {
-    config.UseMySQL(builder.Configuration.GetConnectionString("MuchikMarketConnection"));
+    config.UseMySQL(muchikConnection);
 });
 
 ////RabbitMQ Settings

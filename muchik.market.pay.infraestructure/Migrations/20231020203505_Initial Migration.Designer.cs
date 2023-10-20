@@ -11,7 +11,7 @@ using muchik.market.pay.infraestructure.context;
 namespace muchik.market.pay.infraestructure.Migrations
 {
     [DbContext(typeof(PaymentContext))]
-    [Migration("20231015033656_Initial Migration")]
+    [Migration("20231020203505_Initial Migration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
