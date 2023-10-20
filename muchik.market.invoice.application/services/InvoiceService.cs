@@ -43,7 +43,7 @@ namespace muchik.market.invoice.application.services
         public void UpdateInvoice(UpdateInvoiceDto updateInvoiceDto)
         {
             var invoiceDto = _mapper.Map<Invoice>(updateInvoiceDto);
-            _invoiceRepository.Add(invoiceDto);
+            _invoiceRepository.Update(invoiceDto);
             //return _invoiceRepository.Save();
             _invoiceRepository.Save();
         }
