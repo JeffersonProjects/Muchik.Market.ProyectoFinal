@@ -1,0 +1,3 @@
+use db_transaction
+db.transactions.insert({ id_transaction: "61a6058e6c43f32854e51f51", id_invoice: "1", amount: 5000, date: "2023-10-15" })
+db.transactions.find().pretty()

@@ -3,3 +3,6 @@ docker build -t muchik-market-api-gateway:1 .
 docker run --name muchik.market.security.api --network muchik-nw -p 9200:80 -e Cloud__Config__Uri=http://muchik-config:8888 -e ASPNETCORE_ENVIRONMENT=dev -d muchik.market.security.api:1
 docker network connect muchik-nw muchik.market.api.gateway
 
+docker tag muchik.market.security.api:1 caiquipa/muchik.market.security.api:1
+
+docker push caiquipa/muchik.market.security.api:1
