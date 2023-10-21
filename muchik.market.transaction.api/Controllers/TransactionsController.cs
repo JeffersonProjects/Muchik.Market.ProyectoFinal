@@ -18,7 +18,7 @@ namespace muchik.market.transaction.api.Controllers
             _transactionsService = transactionsService;
         }
 
-        [HttpGet]
+        [HttpGet("getAllTransactions")]
         public async Task<ICollection<TransactionsDto>> GetTransactions() =>
             await _transactionsService.GetTransactionsAsync();
 
@@ -35,7 +35,7 @@ namespace muchik.market.transaction.api.Controllers
             return transactions;
         }
 
-        [HttpPost]
+        [HttpPost("CreateTransactions")]
         public async Task<IActionResult> CreateTransactions([FromBody] TransactionsDto TransactionsDto)
         {
             await _transactionsService.CreateTransactionsAsync(TransactionsDto);

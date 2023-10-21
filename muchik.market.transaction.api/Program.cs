@@ -16,11 +16,11 @@ using muchik.market.transaction.infraestructure.context;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.AddConfigServer();
-// Add services to the container.
-var application = builder.Configuration.GetValue<string>("name", "Not found!");
-var muchikConnection = builder.Configuration.GetValue<string>("TransacctionsStoreDatabase:ConnectionString", "Not found!");
-var muchikConnection1 = builder.Configuration.GetSection("TransacctionsStoreDatabase");
+//builder.AddConfigServer();
+//// Add services to the container.
+//var application = builder.Configuration.GetValue<string>("name", "Not found!");
+//var muchikConnection = builder.Configuration.GetValue<string>("TransacctionsStoreDatabase:ConnectionString", "Not found!");
+
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -31,9 +31,18 @@ builder.Services.AddSwaggerGen();
 //Automapper
 builder.Services.AddAutoMapper(typeof(EntityToDtoProfile), typeof(DtoToEntityProfile));
 
-//MongoDB
+//var configData = new TransactionsStoreDatabaseSettings { 
+//    ConnectionString= muchikConnection,
+//    DatabaseName = builder.Configuration.GetValue<string>("TransacctionsStoreDatabase:DatabaseName", "Not found!"),
+//    TransactionCollectionName = builder.Configuration.GetValue<string>("TransacctionsStoreDatabase:TransactionCollectionName", "Not found!"),
+//};
+//var muchikConnection1 = builder.Configuration.Bind(configData);
+////MongoDB
 builder.Services.Configure<TransactionsStoreDatabaseSettings>(
     builder.Configuration.GetSection("TransacctionsStoreDatabase"));
+
+
+
 
 builder.Services.AddSingleton<ITransactionsService, TransactionsService>();
 

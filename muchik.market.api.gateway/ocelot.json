@@ -9,7 +9,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "muchik.market.invoice.api",
+          "Host": "muchik-invoices",
           "Port": 80
         }
       ],
@@ -23,7 +23,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "muchik.market.security.api",
+          "Host": "muchik-security",
           "Port": 80
         }
       ],
@@ -39,11 +39,28 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "muchik.market.pay.api",
+          "Host": "muchik-pay",
           "Port": 80
         }
       ],
-      "UpstreamPathTemplate": "/muchick/api/payment/{everything_else}",
+      "UpstreamPathTemplate": "/muchik/api/payment/{everything_else}",
+      "UpstreamHttpMethod": [ "GET", "POST" ]
+
+    },
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "DownstreamPathTemplate": "/api/transactions/{everything_else}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "muchik-transaction",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/muchik/api/transaction/{everything_else}",
       "UpstreamHttpMethod": [ "GET", "POST" ]
 
     }

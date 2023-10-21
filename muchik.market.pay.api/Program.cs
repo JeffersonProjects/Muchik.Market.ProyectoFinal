@@ -13,6 +13,8 @@ using muchik.market.pay.infraestructure.context;
 using muchik.market.pay.infraestructure.repositories;
 using Steeltoe.Discovery.Client;
 using Steeltoe.Extensions.Configuration.ConfigServer;
+using MediatR;
+using muchik.market.infrastructure.ioc;
 
 var builder = WebApplication.CreateBuilder(args);
 

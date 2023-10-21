@@ -1,0 +1,60 @@
+version: "3.5"
+services:
+  muchik-gateway:
+    image: caiquipa/muchik.market.api.gateway:2
+    container_name: muchik-gateway
+    restart: always
+    ports:
+    - 9000:80
+    environment:
+    - Cloud__Config__Uri='http://muchik-config:8888'
+    - ASPNETCORE_ENVIRONMENT=dev
+    networks:
+    - muchik-nw
+  muchik-security:
+    image: caiquipa/muchik.market.security.api:1
+    container_name: muchik-security
+    restart: always
+    ports:
+    - 9100:80
+    environment:
+    - Cloud__Config__Uri='http://muchik-config:8888'
+    - ASPNETCORE_ENVIRONMENT=dev
+    networks:
+    - muchik-nw
+  muchik-invoice:
+    image: caiquipa/muchik.market.invoice.api:1
+    container_name: muchik-invoices
+    restart: always
+    ports:
+    - 9200:80
+    environment:
+    - Cloud__Config__Uri='http://muchik-config:8888'
+    - ASPNETCORE_ENVIRONMENT=dev
+    networks:
+    - muchik-nw
+  muchik-pay:
+    image: caiquipa/muchik.market.pay.api:1
+    container_name: muchik-pay
+    restart: always
+    ports:
+    - 9300:80
+    environment:
+    - Cloud__Config__Uri='http://muchik-config:8888'
+    - ASPNETCORE_ENVIRONMENT=dev
+    networks:
+    - muchik-nw
+  muchik-transaction:
+    image: caiquipa/muchik.market.transaction.api:1
+    container_name: muchik-transaction
+    restart: always
+    ports:
+    - 9400:80
+    environment:
+    - Cloud__Config__Uri='http://muchik-config:8888'
+    - ASPNETCORE_ENVIRONMENT=dev
+    networks:
+    - muchik-nw
+networks:
+  muchik-nw:
+    name: muchik-nw

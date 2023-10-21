@@ -13,23 +13,20 @@ using muchik.market.pay.infraestructure.context;
 using muchik.market.pay.infraestructure.repositories;
 using Steeltoe.Discovery.Client;
 using Steeltoe.Extensions.Configuration.ConfigServer;
-<<<<<<< HEAD
-=======
+
 using muchik.market.infrastructure.ioc;
 using MediatR;
->>>>>>> dd2e0fe7d60008d27015fca3fdf6083f22c3f664
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.AddConfigServer();
 // Add services to the container.
-<<<<<<< HEAD
+
 var application = builder.Configuration.GetValue<string>("name", "Not found!");
 var muchikConnection = builder.Configuration.GetValue<string>("connectionStrings:MuchikMarketConnection", "Not found!");
 
-=======
-var muchikConnection = builder.Configuration.GetValue<string>("ConnectionStrings:MuchikMarketConnection", "Not found!");
->>>>>>> dd2e0fe7d60008d27015fca3fdf6083f22c3f664
+
+
 // Add services to the container.
 
 builder.Services.AddControllers();

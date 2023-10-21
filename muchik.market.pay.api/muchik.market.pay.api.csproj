@@ -8,6 +8,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Program_BACKUP_1212.cs" />
+    <Compile Remove="Program_BACKUP_1780.cs" />
+    <Compile Remove="Program_BASE_1212.cs" />
+    <Compile Remove="Program_BASE_1780.cs" />
+    <Compile Remove="Program_LOCAL_1212.cs" />
+    <Compile Remove="Program_LOCAL_1780.cs" />
+    <Compile Remove="Program_REMOTE_1212.cs" />
+    <Compile Remove="Program_REMOTE_1780.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.22">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
