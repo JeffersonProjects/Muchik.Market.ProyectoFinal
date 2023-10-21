@@ -5,8 +5,8 @@ Proyecto final del taller .Net & Microservicios
 ***
 Proyecto desarrollado por los siguientes integrantes:
 * Waldo Trebejo Loayza
-* Cristian Segura Jurado
-* Genderson 
 * César Aiquipa Herrera
+* Cristian Segura Jurado
 * Juan Quiroz Neira
+* Genderson Camayo Rodriguez 
 
