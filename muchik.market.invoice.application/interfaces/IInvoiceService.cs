@@ -8,7 +8,7 @@ namespace muchik.market.invoice.application.interfaces
     {
         ICollection<InvoiceDto> GetAllInvoices();
         InvoiceDto FindInvoice(int Id);
-        void CreateInvoice(CreateInvoiceDto createPaymentDto);
+        Task<bool> CreateInvoice(CreateInvoiceDto createPaymentDto);
         void UpdateInvoice(UpdateInvoiceDto updateInvoiceDto);
 
     }

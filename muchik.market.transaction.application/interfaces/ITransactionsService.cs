@@ -6,9 +6,9 @@ namespace muchik.market.transaction.application.interfaces
 {
     public interface ITransactionsService
     {
-        Task<ICollection<TransactionsDto>> GetAsync();
-        Task<TransactionsDto?> GetAsync(string id);
-        Task CreateAsync(TransactionsDto newTransactions);
+        Task<ICollection<TransactionsDto>> GetTransactionsAsync();
+        Task<TransactionsDto?> GetTransactionsAsync(string id);
+        Task CreateTransactionsAsync(TransactionsDto newTransactions);
 
     }
 }

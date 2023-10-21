@@ -37,9 +37,9 @@ namespace muchik.market.infrastructure.bus
         {
             var connectionFactory = new ConnectionFactory
             {
-                HostName = _settings.HostName,
-                UserName = _settings.Username,
-                Password = _settings.Password,
+                HostName = "rabbitmq-muchik", //_settings.HostName,
+                UserName = "usr_admin", //_settings.Username,
+                Password = "NewHorizons_2023", //_settings.Password,
             };
 
             using var connection = connectionFactory.CreateConnection();
@@ -101,9 +101,9 @@ namespace muchik.market.infrastructure.bus
         {
             var connectionFactory = new ConnectionFactory
             {
-                HostName = _settings.HostName,
-                UserName = _settings.Username,
-                Password = _settings.Password,
+                HostName = "rabbitmq-muchik", //_settings.HostName,
+                UserName = "usr_admin", //_settings.Username,
+                Password = "NewHorizons_2023", //_settings.Password,
                 DispatchConsumersAsync = true
             };
 

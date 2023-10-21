@@ -51,7 +51,7 @@ services:
     restart: always
     environment:
       - RABBITMQ_DEFAULT_USER=usr_admin
-      - RABBITMQ_DEFAULT_PASS=NewHorizons_2023@
+      - RABBITMQ_DEFAULT_PASS=NewHorizons_2023
     ports:
     - 5672:5672
     - 15672:15672

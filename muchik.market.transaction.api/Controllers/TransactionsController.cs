@@ -19,13 +19,13 @@ namespace muchik.market.transaction.api.Controllers
         }
 
         [HttpGet]
-        public async Task<ICollection<TransactionsDto>> Get() =>
-            await _transactionsService.GetAsync();
+        public async Task<ICollection<TransactionsDto>> GetTransactions() =>
+            await _transactionsService.GetTransactionsAsync();
 
         [HttpGet("{id:length(24)}")]
-        public async Task<ActionResult<TransactionsDto>> Get(string id)
+        public async Task<ActionResult<TransactionsDto>> GetTransactions(string id)
         {
-            var transactions = await _transactionsService.GetAsync(id);
+            var transactions = await _transactionsService.GetTransactionsAsync(id);
 
             if (transactions is null)
             {
@@ -36,11 +36,11 @@ namespace muchik.market.transaction.api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] TransactionsDto TransactionsDto)
+        public async Task<IActionResult> CreateTransactions([FromBody] TransactionsDto TransactionsDto)
         {
-            await _transactionsService.CreateAsync(TransactionsDto);
+            await _transactionsService.CreateTransactionsAsync(TransactionsDto);
 
-            return CreatedAtAction(nameof(Get), new { id = TransactionsDto.Id_Transaction }, TransactionsDto);
+            return CreatedAtAction(nameof(GetTransactions), new { id = TransactionsDto.Id_Transaction }, TransactionsDto);
         }
 
     }

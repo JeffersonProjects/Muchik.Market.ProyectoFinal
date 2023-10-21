@@ -30,21 +30,21 @@ namespace muchik.market.transaction.application.services
                 transactionsStoreDatabaseSettings.Value.TransactionCollectionName);
         }
 
-        public async Task<ICollection<TransactionsDto>> GetAsync()
+        public async Task<ICollection<TransactionsDto>> GetTransactionsAsync()
         {         
             var transactions = await _transactionsCollection.Find(_ => true).ToListAsync();
             var transactionsDto = _mapper.Map<ICollection<TransactionsDto>>(transactions);
             return transactionsDto;
         }
 
-        public async Task<TransactionsDto?> GetAsync(string id)
+        public async Task<TransactionsDto?> GetTransactionsAsync(string id)
         {
             var transaction = await _transactionsCollection.Find(x => x.Id_Transaction == id).FirstOrDefaultAsync();
             var transactionDto = _mapper.Map<TransactionsDto>(transaction);
             return transactionDto;
         }          
 
-        public async Task CreateAsync(TransactionsDto transactionsDto)
+        public async Task CreateTransactionsAsync(TransactionsDto transactionsDto)
         {
             var transactions = _mapper.Map<Transactions>(transactionsDto);
             await _transactionsCollection.InsertOneAsync(transactions);

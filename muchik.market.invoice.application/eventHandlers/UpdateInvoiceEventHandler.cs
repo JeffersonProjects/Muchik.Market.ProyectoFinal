@@ -5,26 +5,27 @@ using muchik.market.invoice.application.services;
 
 namespace muchik.market.invoice.application.events
 {
-    public class CreateInvoiceEventHandler : IEventHandler<CreateInvoiceEvent>
+    public class UpdateInvoiceEventHandler : IEventHandler<UpdateInvoiceEvent>
     {
         private readonly IEventBus _eventBus;
         private readonly IInvoiceService _invoiceService;
 
-        public CreateInvoiceEventHandler(IEventBus eventBus, IInvoiceService invoiceService) 
+        public UpdateInvoiceEventHandler(IEventBus eventBus, IInvoiceService invoiceService) 
         {
             _eventBus = eventBus;
             _invoiceService = invoiceService;
         }
         
-        public Task Handle(CreateInvoiceEvent @event)
+        public Task Handle(UpdateInvoiceEvent @event)
         {
-            var invoiceDto = new CreateInvoiceDto
+            var invoiceDto = new UpdateInvoiceDto
             {               
+                Id_Invoice = @event.Id_Invoice,
                 Amount = @event.Amount,
-                State = @event.State,
+                State = 1, //Se actualiza a estado 1 = Pagado. //@event.State,
             };
 
-            _invoiceService.CreateInvoice(invoiceDto);
+            _invoiceService.UpdateInvoice(invoiceDto);
 
             return Task.CompletedTask;
         }
