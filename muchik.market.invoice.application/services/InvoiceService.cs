@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using muchik.market.domain.bus;
+using muchik.market.invoice.application.commands;
 using muchik.market.invoice.application.dto;
 using muchik.market.invoice.application.dto.Creates;
 using muchik.market.invoice.application.interfaces;
@@ -11,11 +13,13 @@ namespace muchik.market.invoice.application.services
     {
         private readonly IMapper _mapper;
         private readonly IInvoiceRepository _invoiceRepository;
+        private readonly IEventBus _eventBus;
 
-        public InvoiceService(IMapper mapper, IInvoiceRepository invoiceRepository) 
+        public InvoiceService(IMapper mapper, IInvoiceRepository invoiceRepository, IEventBus eventBus) 
         {
             _mapper = mapper;
             _invoiceRepository = invoiceRepository;
+            _eventBus = eventBus;
         }
 
         public ICollection<InvoiceDto> GetAllInvoices()
@@ -32,12 +36,13 @@ namespace muchik.market.invoice.application.services
             return invoiceDto;
         }
 
-        public void CreateInvoice(CreateInvoiceDto createInvoiceDto)
+        public async Task<bool> CreateInvoice(CreateInvoiceDto createInvoiceDto)
         {
             var invoice = _mapper.Map<Invoice>(createInvoiceDto);
             _invoiceRepository.Add(invoice);
-            //return _invoiceRepository.Save();
-            _invoiceRepository.Save();
+            return _invoiceRepository.Save();
+            //_invoiceRepository.Save();
+
         }
 
         public void UpdateInvoice(UpdateInvoiceDto updateInvoiceDto)

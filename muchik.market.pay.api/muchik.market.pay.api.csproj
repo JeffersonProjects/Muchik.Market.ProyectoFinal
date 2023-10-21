@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\muchik.market.infrastructure.ioc\muchik.market.infrastructure.ioc.csproj" />
     <ProjectReference Include="..\muchik.market.pay.application\muchik.market.pay.application.csproj" />
     <ProjectReference Include="..\muchik.market.pay.infraestructure\muchik.market.pay.infraestructure.csproj" />
   </ItemGroup>

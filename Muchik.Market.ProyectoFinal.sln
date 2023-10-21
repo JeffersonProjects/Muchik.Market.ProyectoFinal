@@ -89,13 +89,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infraestructure", "Infraest
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{92B2BD21-EB42-4F77-8B74-1910C76ACB88}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "muchik.market.transaction.application", "muchik.market.transaction.application\muchik.market.transaction.application.csproj", "{A05FB261-DC59-4279-9000-503260DAD47B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "muchik.market.transaction.application", "muchik.market.transaction.application\muchik.market.transaction.application.csproj", "{A05FB261-DC59-4279-9000-503260DAD47B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "muchik.market.transaction.domain", "muchik.market.transaction.domain\muchik.market.transaction.domain.csproj", "{052D7EF1-EB75-41F0-9845-469CC18193C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "muchik.market.transaction.domain", "muchik.market.transaction.domain\muchik.market.transaction.domain.csproj", "{052D7EF1-EB75-41F0-9845-469CC18193C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "muchik.market.transaction.infraestructure", "muchik.market.transaction.infraestructure\muchik.market.transaction.infraestructure.csproj", "{BD09C760-9785-491A-B6B9-D09E8F5F5A48}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "muchik.market.transaction.infraestructure", "muchik.market.transaction.infraestructure\muchik.market.transaction.infraestructure.csproj", "{BD09C760-9785-491A-B6B9-D09E8F5F5A48}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "muchik.market.transaction.api", "muchik.market.transaction.api\muchik.market.transaction.api.csproj", "{FCE6F394-DF05-42FF-A2F4-B3AD4EAD6EB4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "muchik.market.transaction.api", "muchik.market.transaction.api\muchik.market.transaction.api.csproj", "{FCE6F394-DF05-42FF-A2F4-B3AD4EAD6EB4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IoC", "IoC", "{35A4DA93-C1F1-4B11-A7D5-E33C8B158AAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "muchik.market.infrastructure.ioc", "muchik.market.infrastructure.ioc\muchik.market.infrastructure.ioc.csproj", "{02BE19F8-EF8B-4A46-8267-F8F57EC5FF6A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -187,6 +191,10 @@ Global
 		{FCE6F394-DF05-42FF-A2F4-B3AD4EAD6EB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FCE6F394-DF05-42FF-A2F4-B3AD4EAD6EB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FCE6F394-DF05-42FF-A2F4-B3AD4EAD6EB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02BE19F8-EF8B-4A46-8267-F8F57EC5FF6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02BE19F8-EF8B-4A46-8267-F8F57EC5FF6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02BE19F8-EF8B-4A46-8267-F8F57EC5FF6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02BE19F8-EF8B-4A46-8267-F8F57EC5FF6A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -234,6 +242,8 @@ Global
 		{052D7EF1-EB75-41F0-9845-469CC18193C4} = {36CAEC58-3511-4BCD-A565-4C9F710D4B24}
 		{BD09C760-9785-491A-B6B9-D09E8F5F5A48} = {81AC5588-9C16-49DF-A910-746C2AA86F4E}
 		{FCE6F394-DF05-42FF-A2F4-B3AD4EAD6EB4} = {92B2BD21-EB42-4F77-8B74-1910C76ACB88}
+		{35A4DA93-C1F1-4B11-A7D5-E33C8B158AAA} = {27E9A3AC-4DDE-4FCF-8C26-C29CFE5E9AD0}
+		{02BE19F8-EF8B-4A46-8267-F8F57EC5FF6A} = {35A4DA93-C1F1-4B11-A7D5-E33C8B158AAA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {69207D45-CE7A-43EA-B23E-B57C1C3F7B55}

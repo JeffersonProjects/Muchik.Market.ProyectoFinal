@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\muchik.market.infrastructure.ioc\muchik.market.infrastructure.ioc.csproj" />
     <ProjectReference Include="..\muchik.market.invoice.application\muchik.market.invoice.application.csproj" />
     <ProjectReference Include="..\muchik.market.invoice.infraestructure\muchik.market.invoice.infraestructure.csproj" />
   </ItemGroup>
