@@ -3,7 +3,7 @@ version: "3.5"
 services:
   service-mysql:
     image: mysql:8.0.26
-    container_name: local-mysql2
+    container_name: local-mysql
     restart: always
     environment:
     - MYSQL_ROOT_PASSWORD=NewHorizons_2023@
@@ -14,7 +14,7 @@ services:
     - muchik-nw
   service-sql:
     image: mcr.microsoft.com/mssql/server:2019-GA-ubuntu-16.04
-    container_name: local-mssql2
+    container_name: local-mssql
     restart: always
     ports:
     - 1433:1433
